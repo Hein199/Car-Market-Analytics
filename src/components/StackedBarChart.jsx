@@ -9,23 +9,57 @@ const StackedBarChart = () => {
     const cars = useSelector(state => state.cars.cars);
 
     const dataByBrandModel = cars.reduce((acc, car) => {
-        if (!acc[car.MkID]) {
-            acc[car.MkID] = {};
+        const brand = car.NameMMT.split(' ')[0];
+        const model = car.Model;
+        const price = parseFloat(car.Prc.replace(',', ''));
+
+        if (!acc[brand]) {
+            acc[brand] = {};
         }
-        acc[car.MkID][car.Model] = (acc[car.MkID][car.Model] || 0) + 1;
+        if (!acc[brand][model]) {
+            acc[brand][model] = { count: 0, totalValue: 0 };
+        }
+        acc[brand][model].count += 1;
+        acc[brand][model].totalValue += price;
         return acc;
     }, {});
 
+    const brands = Object.keys(dataByBrandModel);
+    const models = Array.from(new Set(brands.flatMap(brand => Object.keys(dataByBrandModel[brand]))));
+
+    const datasets = models.map((model, index) => {
+        return {
+            label: model,
+            data: brands.map(brand => dataByBrandModel[brand][model]?.count || 0),
+            backgroundColor: `hsl(${index * 360 / models.length}, 70%, 50%)`,
+        };
+    });
+
     const data = {
-        labels: Object.keys(dataByBrandModel),
-        datasets: Object.keys(dataByBrandModel).map(brand => ({
-            label: brand,
-            data: Object.values(dataByBrandModel[brand]),
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
-        })),
+        labels: brands,
+        datasets: datasets,
     };
 
-    return <Bar data={data} options={{ scales: { x: { stacked: true }, y: { stacked: true } } }} />;
+    const options = {
+        scales: {
+            x: { stacked: true },
+            y: { stacked: true },
+        },
+        plugins: {
+            legend: { position: 'top' },
+        },
+    };
+
+    return (
+        <div className="card">
+            <div className="card-body">
+                <h5 className="card-title text-center">Models By Brand Distribution Chart</h5>
+                <div style={{ height: '600px', width: '100%' }}>
+                    <Bar data={data} options={options} />
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default StackedBarChart;

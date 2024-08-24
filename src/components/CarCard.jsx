@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { addHighlightedCar } from '../redux/carSlice';
+import '../styles/CarCard.css';
 
 const CarCard = ({ car }) => {
     const dispatch = useDispatch();
@@ -10,12 +11,14 @@ const CarCard = ({ car }) => {
     };
 
     return (
-        <div className="car-card">
-            <img src={car.Img300} alt={car.Model} />
-            <h3>{car.NameMMT}</h3>
-            <p>Price: {car.Prc} {car.Currency}</p>
-            <p>Year: {car.Yr}</p>
-            <button onClick={handleHighlight}>Highlight</button>
+        <div className="car-card card mb-4 shadow-sm">
+            <img src={car.Img300} className="card-img-top" alt={car.Model} />
+            <div className="card-body">
+                <h5 className="card-title">{car.NameMMT}</h5>
+                <p className="card-text">Price: {car.Prc} {car.Currency}</p>
+                <p className="card-text">Year: {car.Yr}</p>
+                <button onClick={handleHighlight} className="btn btn-primary">Highlight</button>
+            </div>
         </div>
     );
 };
