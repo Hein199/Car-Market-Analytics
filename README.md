@@ -105,12 +105,12 @@ For any questions or feedback, please reach out to [your-email@example.com](mail
 Here are some screenshots of the Car-Market-Analytics web app:
 
 <img width="1470" alt="Screenshot 2567-08-25 at 23 41 13" src="https://github.com/user-attachments/assets/7d5b8439-69a9-4870-82ff-3439536eb2c4">
-
+<br><br>
 <img width="1470" alt="Screenshot 2567-08-25 at 23 41 20" src="https://github.com/user-attachments/assets/ab4a4764-4056-4c5e-8784-a1b78e107437">
-
+<br><br>
 <img width="1470" alt="Screenshot 2567-08-26 at 00 00 42" src="https://github.com/user-attachments/assets/90317706-40f8-4438-9a4b-92635c4bf174">
-
+<br><br>
 <img width="1470" alt="Screenshot 2567-08-25 at 23 41 31" src="https://github.com/user-attachments/assets/4a470794-ca52-4d9a-8cf5-1b9a7883d6f3">
-
+<br><br>
 <img width="1470" alt="Screenshot 2567-08-25 at 23 41 42" src="https://github.com/user-attachments/assets/0ecce097-84d4-45d7-aa29-a97001723990">
 
