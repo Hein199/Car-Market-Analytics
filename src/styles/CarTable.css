@@ -1,0 +1,9 @@
+.car-table table {
+    margin-top: 1rem;
+}
+
+.car-table th,
+.car-table td {
+    text-align: center;
+    vertical-align: middle;
+}

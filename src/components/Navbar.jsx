@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ padding: '15px 10px' }}>
             <div className="container-fluid">
-                <Link to="/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }}>
+                <Link to="/Car-Market-Analytics/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }}>
                     <img
                         src='https://www.taladrod.com/w40/img/logo.svg'
                         alt='Car Market Logo'

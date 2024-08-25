@@ -1,0 +1,12 @@
+.car-card {
+    width: 18rem;
+}
+
+.car-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* .car-card .card-body {
+    text-align: center;
+} */

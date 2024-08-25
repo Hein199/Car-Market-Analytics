@@ -1,25 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import '../styles/CarTable.css';
 
 const CarTable = () => {
     const cars = useSelector(state => state.cars.cars);
 
-    // Helper function to extract the brand from NameMMT
     const extractBrand = (nameMMT) => {
         const match = nameMMT.match(/^[^\s]+/);
         return match ? match[0] : 'Unknown';
     };
 
-    // Convert the car data to an array with brand and model
-    const carsWithBrandModel = cars.map(car => {
-        return {
-            ...car,
-            brand: extractBrand(car.NameMMT),
-            model: car.Model
-        };
-    });
+    const carsWithBrandModel = cars.map(car => ({
+        ...car,
+        brand: extractBrand(car.NameMMT),
+        model: car.Model
+    }));
 
-    // Aggregate data by brand and model
     const dataByBrandModel = carsWithBrandModel.reduce((acc, car) => {
         const key = `${car.brand}-${car.model}`;
         if (!acc[key]) {
@@ -31,9 +27,9 @@ const CarTable = () => {
     }, {});
 
     return (
-        <div className="container mt-4">
-            <table className="table table-striped">
-                <thead>
+        <div className="car-table container mt-4">
+            <table className="table table-striped table-bordered table-hover">
+                <thead className="thead-dark table-primary">
                     <tr>
                         <th>Brand</th>
                         <th>Model</th>

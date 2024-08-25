@@ -9,19 +9,38 @@ const PieChart = () => {
     const cars = useSelector(state => state.cars.cars);
 
     const dataByBrand = cars.reduce((acc, car) => {
-        acc[car.MkID] = (acc[car.MkID] || 0) + 1;
+        const brand = car.NameMMT.split(' ')[0];
+        acc[brand] = (acc[brand] || 0) + 1;
         return acc;
     }, {});
+
+    const generateRandomColor = () => {
+        const letters = '0123456789ABCDEF';
+        let color = '#';
+        for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    };
+
+    const backgroundColors = Object.keys(dataByBrand).map(() => generateRandomColor());
 
     const data = {
         labels: Object.keys(dataByBrand),
         datasets: [{
             data: Object.values(dataByBrand),
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+            backgroundColor: backgroundColors,
         }]
     };
 
-    return <Pie data={data} />;
+    return (
+        <div className="card">
+            <div className="card-body">
+                <h5 className="card-title text-center">Brand Distribution Chart</h5>
+                <Pie data={data} />
+            </div>
+        </div>
+    );
 };
 
 export default PieChart;
