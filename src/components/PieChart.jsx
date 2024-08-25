@@ -14,16 +14,15 @@ const PieChart = () => {
         return acc;
     }, {});
 
-    const generateRandomColor = () => {
-        const letters = '0123456789ABCDEF';
-        let color = '#';
-        for (let i = 0; i < 6; i++) {
-            color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-    };
+    const colorPalette = [
+        '#FF6F61', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1',
+        '#955251', '#B565A7', '#009B77', '#DD4124', '#D65076',
+        '#45B8AC', '#EFC050', '#5B5EA6', '#9B2335', '#DFCFBE',
+        '#55B4B0', '#E15D44', '#7FCDCD', '#BC243C', '#C3447A',
+        '#98B4D4', '#C4A000', '#2E4A62', '#E94B3C', '#6C4F3D',
+    ];
 
-    const backgroundColors = Object.keys(dataByBrand).map(() => generateRandomColor());
+    const backgroundColors = Object.keys(dataByBrand).map((_, index) => colorPalette[index % colorPalette.length]);
 
     const data = {
         labels: Object.keys(dataByBrand),
@@ -33,11 +32,40 @@ const PieChart = () => {
         }]
     };
 
+    const options = {
+        plugins: {
+            legend: {
+                display: false, // Disable default legend
+            },
+        },
+    };
+
     return (
-        <div className="card">
-            <div className="card-body">
-                <h5 className="card-title text-center">Brand Distribution Chart</h5>
-                <Pie data={data} />
+        <div className="container mt-4">
+            <h5 className="text-center mb-4">Brand Distribution Chart</h5>
+            <div className="row">
+                <div className="col-md-9">
+                    <div className="chart-container" style={{ height: '500px' }}>
+                        <Pie data={data} options={options} />
+                    </div>
+                </div>
+                <div className="col-md-3 d-flex justify-content-end">
+                    <div className="legend-scrollable" style={{ maxHeight: '500px', overflowY: 'auto', borderLeft: '1px solid #dee2e6', paddingLeft: '10px', width: '100%' }}>
+                        {Object.keys(dataByBrand).map((brand, index) => (
+                            <div key={index} className="d-flex align-items-center mb-2">
+                                <div
+                                    style={{
+                                        width: '12px',
+                                        height: '12px',
+                                        backgroundColor: backgroundColors[index % backgroundColors.length],
+                                        marginRight: '8px',
+                                    }}
+                                ></div>
+                                <span className="text-muted" style={{ fontSize: '14px' }}>{brand}</span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
         </div>
     );

@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
+    const scrollToTop = () => {
+        const topElement = document.getElementById('dashboard-top');
+        if (topElement) {
+            topElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{ padding: '15px 10px' }}>
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style={{ padding: '15px 15px' }}>
             <div className="container-fluid">
-                <Link to="/Car-Market-Analytics/" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }}>
+                <Link to="/Car-Market-Analytics/#dashboard-top" className="navbar-brand" style={{ display: 'flex', alignItems: 'center' }} onClick={scrollToTop}>
                     <img
                         src='https://www.taladrod.com/w40/img/logo.svg'
                         alt='Car Market Logo'

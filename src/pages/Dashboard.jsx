@@ -5,7 +5,7 @@ import CarTable from '../components/CarTable';
 import PieChart from '../components/PieChart';
 import StackedBarChart from '../components/StackedBarChart';
 import CarCard from '../components/CarCard';
-import carsData from '../taladrod-cars.json';
+import carsData from '../data/taladrod-cars.json';
 import '../styles/Dashboard.css';
 
 const Dashboard = () => {
@@ -16,13 +16,13 @@ const Dashboard = () => {
     }, [dispatch]);
 
     return (
-        <div className="container mt-4">
+        <div id="dashboard-top" className="container mt-4" style={{ paddingTop: '90px' }}>
             <h1 className="text-center mb-4">Dashboard</h1>
             <div className="row">
-                <div className="col-md-6 mb-4">
+                <div className="col-7 mb-4">
                     <PieChart />
                 </div>
-                <div className="col-md-6 mb-4">
+                <div className="col-12 mb-4">
                     <StackedBarChart />
                 </div>
             </div>

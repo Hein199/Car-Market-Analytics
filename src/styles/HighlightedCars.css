@@ -1,0 +1,22 @@
+.highlighted-cars-container {
+    padding: 56px;
+}
+
+.page-title {
+    margin-top: 56px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.highlighted-cars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-title {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+}
