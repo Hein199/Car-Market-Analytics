@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeHighlightedCar } from '../redux/carSlice';
-import '../styles/HighlightedCars.css'; // Ensure this CSS file is updated
+import '../styles/HighlightedCars.css';
 
 const HighlightedCars = () => {
     const highlightedCars = useSelector(state => state.cars.highlightedCars);

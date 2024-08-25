@@ -12,9 +12,8 @@ const CarTable = () => {
     };
 
     const sanitizePrice = (price) => {
-        // Extract only digits and decimal points
         const sanitized = price.replace(/[^0-9.]/g, '');
-        return parseFloat(sanitized) || 0;  // Convert to a float or return 0 if conversion fails
+        return parseFloat(sanitized) || 0;
     };
 
     const carsWithBrandModel = cars.map(car => ({

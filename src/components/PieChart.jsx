@@ -35,7 +35,7 @@ const PieChart = () => {
     const options = {
         plugins: {
             legend: {
-                display: false, // Disable default legend
+                display: false,
             },
         },
     };
