@@ -207,8 +207,9 @@ For any questions or feedback, please reach out to [your-email@example.com](mail
 
 Here are some screenshots of the Car-Market-Analytics web app:
 
-<img width="1470" alt="Screenshot 2567-08-25 at 23 41 13" src="https://github.com/user-attachments/assets/74756117-c4a8-4bd6-85cb-1cfccfc15366">
-<img width="1470" alt="Screenshot 2567-08-25 at 23 41 20" src="https://github.com/user-attachments/assets/55f42a92-277a-472d-bfd3-347e7c73a94e">
-<img width="1470" alt="Screenshot 2567-08-25 at 23 41 23" src="https://github.com/user-attachments/assets/25577f74-aedc-4797-8e18-c8c23855cac4">
-<img width="1470" alt="Screenshot 2567-08-25 at 23 41 31" src="https://github.com/user-attachments/assets/1d15e585-8bcd-4b4b-b2de-2efd7604a919">
-<img width="1470" alt="Screenshot 2567-08-25 at 23 41 42" src="https://github.com/user-attachments/assets/6f359379-e980-4d19-8488-053dc3015a59">
+<img width="1470" alt="Screenshot 2567-08-25 at 23 41 13" src="https://github.com/user-attachments/assets/7d5b8439-69a9-4870-82ff-3439536eb2c4">
+<img width="1470" alt="Screenshot 2567-08-25 at 23 41 20" src="https://github.com/user-attachments/assets/ab4a4764-4056-4c5e-8784-a1b78e107437">
+<img width="1470" alt="Screenshot 2567-08-26 at 00 00 42" src="https://github.com/user-attachments/assets/90317706-40f8-4438-9a4b-92635c4bf174">
+<img width="1470" alt="Screenshot 2567-08-25 at 23 41 31" src="https://github.com/user-attachments/assets/4a470794-ca52-4d9a-8cf5-1b9a7883d6f3">
+<img width="1470" alt="Screenshot 2567-08-25 at 23 41 42" src="https://github.com/user-attachments/assets/0ecce097-84d4-45d7-aa29-a97001723990">
+
